@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Hi everybody, welcome to the first tutorial in our series on the fundamentals of making a website. Over the course of these 5 lessons, we will cover the basics of how websites work, what you need to know to get started, and setting up a good workflow for developing a website of your own. 
+Hello everybody, welcome to the first tutorial in our series on the fundamentals of making a website. Over the course of these 5 lessons, we will cover the basics of how websites work, what you need to know to get started, and setting up a good workflow for developing a website of your own. 
 
 We assume that you're not completely new to programming - you should at least have the background that an introduction to programming course like COMP 202 would give you. Some familiarity with your computer's developing environment is a plus - we will be working with the command line from the beginning. I will also be teaching from a unix environment, so if you are using Windows, you may find it harder to follow along with your own computer. However, the concepts will largely remain the same.
 

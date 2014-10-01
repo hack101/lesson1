@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Hi everybody, welcome to the first tutorial in our series on the fundamentals of making a website. Over the course of these 5 lessons, we will cover the basics of how websites work, what you need to know to get started, and setting up a good workflow for developing a website of your own. 
+Hello everybody, welcome to the first tutorial in our series on the fundamentals of making a website. Over the course of these 5 lessons, we will cover the basics of how websites work, what you need to know to get started, and setting up a good workflow for developing a website of your own. 
 
 We assume that you're not completely new to programming - you should at least have the background that an introduction to programming course like COMP 202 would give you. Some familiarity with your computer's developing environment is a plus - we will be working with the command line from the beginning. I will also be teaching from a unix environment, so if you are using Windows, you may find it harder to follow along with your own computer. However, the concepts will largely remain the same.
 
@@ -13,8 +13,6 @@ These courses are aimed at people who have started to pick up the tools for prog
 Before we begin getting into the nitty-gritty, it's a good idea to have a (basic) conceptual image of what a website is. We'll brush over this quickly, and get into more details in the final tutorial, once you have more concext for them. At the moment, what you need to know is that a website is basically a set of files and folders on a computer somewhere. This is what you need to know when you're making a website, because you'll be making these files.
 
 There are two important parts of the equation: the client, and the server. You are the client - well, more specifically, your web browser, be it Chrome or Firefox or whatnot, is the client. But it suffices to consider the user and their browser as the client. The client wants something: the webpage. When you type a website's URL into your browser, you are asking for the website at that URL. When you press enter, your browser sends out a request for the website at that address.
-
-[ Diagram of client/server? ]
 
 This is where the server comes in. The infrastructure of the internet matches the address you typed in to a server somewhere. That server is a computer which holds the content of the website, represented in different types of files. So when you type in a URL, your browser asks the server for the files that make up that website. And if the server is available, it sends those files back to you, the client. These files are just a bunch of text, right? Some of them might look like this:
 
@@ -27,9 +25,9 @@ This is where the server comes in. The infrastructure of the internet matches th
     ... and so on
 ````
 
-This is a type of file - an HTML file, to be exact - which represents some structure for a website. Your browser knows how to read this type of file, and it knows how to turn the weird format into the visual representation of the website.
+This is a type of file - an HTML file, to be exact - which represents some structure for a webpage. Your browser knows how to read this type of file, and it knows how to turn the weird format into the visual representation of the website.
 
-So a website is a bunch of files on some server, and when you visit that website, your browser asks the server to see those files so it can draw them for you. METAPHOR GOES HERE
+So a website is a bunch of files on some server, and when you visit that website, your browser asks the server to see those files so it can draw them for you.
 
 Here's some vocabulary: we say that the server "hosts" the website, or hosts the files that make up the website. Today we'll start writing those files, and let someone else host them for us (for free!). In later tutorials we'll learn more about hosting, and get a little more involved.
 
@@ -58,7 +56,7 @@ Inside `index.html`, we will write the following:
 
 Save the file, and then open it in a browser. There are a few ways of doing this - the easiest if you are using Sublime Text is to right click and select "Open in Browser". You can also find the file in your filesystem (using Finder on a mac, or whatever) and choose to open it with a browser. Or, you can find the path to the file, and type that in the address bar of your browser, like a URL. When you open the file, you should see a page, empty but for the existential question "I am a website?" If you named the folder that contains our `index.html` something like `website`, then the filepath will look like `.../website/index.html` in your address bar.
 
-![You tell me](http://i.imgur.com/P3PxgyS.png)
+![You tell me](./img/1)
 
 An HTML file like our `index.html` is made up of what we call "tags". That's the stuff wrapped in `< >`. Tags have specific meanings that your browser understands. Importantly, tags should come in pairs: opening tags, which are just a word inside the `< >`s, and closing tags, which are the same word, but with a / in front. Some particular tags do not come in pairs, and we will see those later, but for the moment, please keep in mind that when you write an opening tag, _you must add a closing tag_. The reason I am being so emphatic about this is because if you do not close a tag, your browser will still give you a webpage back _without telling you it may be wrong_. If you don't close a tag, the browser will still try to render a webpage, but the result might not be what you wanted. When things fail on the web, they do so silently.
 
@@ -84,9 +82,55 @@ Type in `git commit -m "Create index.html"` and press enter. Git will create a c
 
 So now we have a (very rudimentary) website, and we've saved our progress on it with git. The final thing we will do today is push our saved history to another source, so other people can view our progress, and also so we can host it somewhere on the internet. At the moment, only you can see your website, because it is hosted on your computer. If your friend wants to see it they will need to be content with seeing it on your screen. For this, we will use Github. Github will store your project history for you, and also host very basic websites as well.
 
-First, let's push to Github. Log in to www.github.com, and create a new repository. It will give you instructions for pushing to the new repository it creates - follow those.
+First, let's push to Github. Log in to [www.github.com](http://www.github.com), and [create a new repository](https://help.github.com/articles/create-a-repo). It will give you instructions for pushing to the new repository it creates - follow those.
 
 Once you've pushed, you should be able to see your files on the github website!
 
-Now we can also use Github to host the website.
+Now we can also use Github to host the website. You can find instructions [here](https://pages.github.com/) - select "Project site" and then "Start from scratch" to see the relevant instructions. It's not too hard: go to your repository, select the "branches" dropdown (as seen in the picture below) and type in "gh-pages", and create a branch with that name.
 
+![Creating a new branch](http://i.imgur.com/QrjWxZg.png =100x)
+
+Since we've already added `index.html` to our repo, all we need to do is wait! After about 10 minutes, you should be able to see your website live by going to *http://_username_.github.io/_repository_*. Unlike when we hosted the website on our own computer, now anyone can see it by going to the URL!
+
+Finally, let's spruce up our page a little bit. Edit `index.html` and add whatever you want - here's an example of what we can do:
+
+````html
+<html>
+<head>
+  <title> Matt Wetmore is cool </title>
+</head>
+<body>
+  <h2> Matt Wetmore's Webpage </h2>
+
+  <p>
+    Hello, my name is Matt. I study math and computer science at McGill university and I am going to make my own website!
+  </p>
+  
+  <h4> My Interests </h4>
+  
+  <p> Here are a few things I like: </p>
+  
+  <ul>
+    <li> Computers </li>
+    <li> Math </li>
+    <li> Hiking </li>
+    <li> Frisbee </li>
+  </ul>
+  
+</body>
+</html>
+````
+
+In the next lesson we'll improve our personal site, starting from this point. After making the changes, remember to commit them! Since we've made changes on the Github website to our repository, the version of our work on Github is newer than the version on our computer. We can synchronize them by running `git pull`. This will bring our version up-to-date.
+
+![git pull](http://i.imgur.com/CtluCGV.png)
+
+Notice that this adds the branch we created on Github to our local repository. We can use `git checkout gh-pages` and `git checkout master` to switch between our default branch (master) and the gh-pages branch. For the meantime, we will work within the master branch. Anytime we want to add new stuff to the website hosted by Github, we can switch to gh-pages (`git checkout gh-pages`), merge in the stuff we've added to master (`git merge master`) and push the updated gh-pages branch to github (`git push origin gh-pages`). This will update the website hosted on Github with our latest changes. Here are some screenshots of me changing `index.html`, committing the changes, merging it into gh-pages, and pushing it:
+
+### Further challenges
+
+If you are looking for more stuff to do until the next lesson, here are some things to try:
+
+ - Learn about the different tags you can use with HTML
+ - Make new HTML files in your website's folder, and link the pages with the `<a>` tag
+ - Read about how to use CSS to style your website (we will cover this in the next lesson too)

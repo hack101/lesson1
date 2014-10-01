@@ -82,9 +82,55 @@ Type in `git commit -m "Create index.html"` and press enter. Git will create a c
 
 So now we have a (very rudimentary) website, and we've saved our progress on it with git. The final thing we will do today is push our saved history to another source, so other people can view our progress, and also so we can host it somewhere on the internet. At the moment, only you can see your website, because it is hosted on your computer. If your friend wants to see it they will need to be content with seeing it on your screen. For this, we will use Github. Github will store your project history for you, and also host very basic websites as well.
 
-First, let's push to Github. Log in to www.github.com, and create a new repository. It will give you instructions for pushing to the new repository it creates - follow those.
+First, let's push to Github. Log in to [www.github.com](http://www.github.com), and [create a new repository](https://help.github.com/articles/create-a-repo). It will give you instructions for pushing to the new repository it creates - follow those.
 
 Once you've pushed, you should be able to see your files on the github website!
 
-Now we can also use Github to host the website.
+Now we can also use Github to host the website. You can find instructions [here](https://pages.github.com/) - select "Project site" and then "Start from scratch" to see the relevant instructions. It's not too hard: go to your repository, select the "branches" dropdown (as seen in the picture below) and type in "gh-pages", and create a branch with that name.
 
+![Creating a new branch](http://i.imgur.com/QrjWxZg.png)
+
+Since we've already added `index.html` to our repo, all we need to do is wait! After about 10 minutes, you should be able to see your website live by going to *http://_username_.github.io/_repository_*. Unlike when we hosted the website on our own computer, now anyone can see it by going to the URL!
+
+Finally, let's spruce up our page a little bit. Edit `index.html` and add whatever you want - here's an example of what we can do:
+
+````html
+<html>
+<head>
+  <title> Matt Wetmore is cool </title>
+</head>
+<body>
+  <h2> Matt Wetmore's Webpage </h2>
+
+  <p>
+    Hello, my name is MAtt. I study math and computer science at McGill university and I am going to make my own website!
+  </p>
+  
+  <h4> My Interests </h4>
+  
+  <p> Here are a few things I like: </p>
+  
+  <ul>
+    <li> Computers </li>
+    <li> Math </li>
+    <li> Hiking </li>
+    <li> Frisbee </li>
+  </ul>
+  
+</body>
+</html>
+````
+
+In the next lesson we'll improve our personal site, starting from this point. After making the changes, remember to commit them! Since we've made changes on the Github website to our repository, the version of our work on Github is newer than the version on our computer. We can synchronize them by running `git pull`. This will bring our version up-to-date.
+
+![git pull](http://i.imgur.com/CtluCGV.png)
+
+Notice that this adds the branch we created on Github to our local repository. We can use `git checkout gh-pages` and `git checkout master` to switch between our default branch (master) and the gh-pages branch. For the meantime, we will work within the master branch. Anytime we want to add new stuff to the website hosted by Github, we can switch to gh-pages (`git checkout gh-pages`), merge in the stuff we've added to master (`git merge master`) and push the updated gh-pages branch to github (`git push origin gh-pages`). This will update the website hosted on Github with our latest changes. Here are some screenshots of me changing `index.html`, committing the changes, merging it into gh-pages, and pushing it:
+
+### Further challenges
+
+If you are looking for more stuff to do until the next lesson, here are some things to try:
+
+ - Learn about the different tags you can use with HTML
+ - Make new HTML files in your website's folder, and link the pages with the `<a>` tag
+ - Read about how to use CSS to style your website (we will cover this in the next lesson too)

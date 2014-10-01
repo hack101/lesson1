@@ -56,7 +56,7 @@ Inside `index.html`, we will write the following:
 
 Save the file, and then open it in a browser. There are a few ways of doing this - the easiest if you are using Sublime Text is to right click and select "Open in Browser". You can also find the file in your filesystem (using Finder on a mac, or whatever) and choose to open it with a browser. Or, you can find the path to the file, and type that in the address bar of your browser, like a URL. When you open the file, you should see a page, empty but for the existential question "I am a website?" If you named the folder that contains our `index.html` something like `website`, then the filepath will look like `.../website/index.html` in your address bar.
 
-![You tell me](./img/1)
+<img src="./img/1.png" alt="You tell me" width="500">
 
 An HTML file like our `index.html` is made up of what we call "tags". That's the stuff wrapped in `< >`. Tags have specific meanings that your browser understands. Importantly, tags should come in pairs: opening tags, which are just a word inside the `< >`s, and closing tags, which are the same word, but with a / in front. Some particular tags do not come in pairs, and we will see those later, but for the moment, please keep in mind that when you write an opening tag, _you must add a closing tag_. The reason I am being so emphatic about this is because if you do not close a tag, your browser will still give you a webpage back _without telling you it may be wrong_. If you don't close a tag, the browser will still try to render a webpage, but the result might not be what you wanted. When things fail on the web, they do so silently.
 
@@ -88,7 +88,7 @@ Once you've pushed, you should be able to see your files on the github website!
 
 Now we can also use Github to host the website. You can find instructions [here](https://pages.github.com/) - select "Project site" and then "Start from scratch" to see the relevant instructions. It's not too hard: go to your repository, select the "branches" dropdown (as seen in the picture below) and type in "gh-pages", and create a branch with that name.
 
-![Creating a new branch](http://i.imgur.com/QrjWxZg.png =100x)
+<img src="./img/2.png" alt="Creating a new branch" width="300">
 
 Since we've already added `index.html` to our repo, all we need to do is wait! After about 10 minutes, you should be able to see your website live by going to *http://_username_.github.io/_repository_*. Unlike when we hosted the website on our own computer, now anyone can see it by going to the URL!
 
@@ -123,9 +123,14 @@ Finally, let's spruce up our page a little bit. Edit `index.html` and add whatev
 
 In the next lesson we'll improve our personal site, starting from this point. After making the changes, remember to commit them! Since we've made changes on the Github website to our repository, the version of our work on Github is newer than the version on our computer. We can synchronize them by running `git pull`. This will bring our version up-to-date.
 
-![git pull](http://i.imgur.com/CtluCGV.png)
+<img src="./img/3.png" alt="git pull" width="600">
 
 Notice that this adds the branch we created on Github to our local repository. We can use `git checkout gh-pages` and `git checkout master` to switch between our default branch (master) and the gh-pages branch. For the meantime, we will work within the master branch. Anytime we want to add new stuff to the website hosted by Github, we can switch to gh-pages (`git checkout gh-pages`), merge in the stuff we've added to master (`git merge master`) and push the updated gh-pages branch to github (`git push origin gh-pages`). This will update the website hosted on Github with our latest changes. Here are some screenshots of me changing `index.html`, committing the changes, merging it into gh-pages, and pushing it:
+
+<img src="./img/4.png" alt="Committing" width="400">
+<img src="./img/5.png" alt="Switching branches" width="400">
+<img src="./img/6.png" alt="Pushing changes" width="400">
+
 
 ### Further challenges
 

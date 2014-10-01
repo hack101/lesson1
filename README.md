@@ -2,7 +2,7 @@
 
 ### Introduction
 
-Hi everybody, welcome to the first tutorial in our series on the fundamentals of making a website. Over the course of these 5 lessons, we will cover the basics of how websites work, what you need to know to get started, and setting up a good workflow for developing a website of your own. 
+Hello everybody, welcome to the first tutorial in our series on the fundamentals of making a website. Over the course of these 5 lessons, we will cover the basics of how websites work, what you need to know to get started, and setting up a good workflow for developing a website of your own. 
 
 We assume that you're not completely new to programming - you should at least have the background that an introduction to programming course like COMP 202 would give you. Some familiarity with your computer's developing environment is a plus - we will be working with the command line from the beginning. I will also be teaching from a unix environment, so if you are using Windows, you may find it harder to follow along with your own computer. However, the concepts will largely remain the same.
 
@@ -13,8 +13,6 @@ These courses are aimed at people who have started to pick up the tools for prog
 Before we begin getting into the nitty-gritty, it's a good idea to have a (basic) conceptual image of what a website is. We'll brush over this quickly, and get into more details in the final tutorial, once you have more concext for them. At the moment, what you need to know is that a website is basically a set of files and folders on a computer somewhere. This is what you need to know when you're making a website, because you'll be making these files.
 
 There are two important parts of the equation: the client, and the server. You are the client - well, more specifically, your web browser, be it Chrome or Firefox or whatnot, is the client. But it suffices to consider the user and their browser as the client. The client wants something: the webpage. When you type a website's URL into your browser, you are asking for the website at that URL. When you press enter, your browser sends out a request for the website at that address.
-
-[ Diagram of client/server? ]
 
 This is where the server comes in. The infrastructure of the internet matches the address you typed in to a server somewhere. That server is a computer which holds the content of the website, represented in different types of files. So when you type in a URL, your browser asks the server for the files that make up that website. And if the server is available, it sends those files back to you, the client. These files are just a bunch of text, right? Some of them might look like this:
 
@@ -27,9 +25,9 @@ This is where the server comes in. The infrastructure of the internet matches th
     ... and so on
 ````
 
-This is a type of file - an HTML file, to be exact - which represents some structure for a website. Your browser knows how to read this type of file, and it knows how to turn the weird format into the visual representation of the website.
+This is a type of file - an HTML file, to be exact - which represents some structure for a webpage. Your browser knows how to read this type of file, and it knows how to turn the weird format into the visual representation of the website.
 
-So a website is a bunch of files on some server, and when you visit that website, your browser asks the server to see those files so it can draw them for you. METAPHOR GOES HERE
+So a website is a bunch of files on some server, and when you visit that website, your browser asks the server to see those files so it can draw them for you.
 
 Here's some vocabulary: we say that the server "hosts" the website, or hosts the files that make up the website. Today we'll start writing those files, and let someone else host them for us (for free!). In later tutorials we'll learn more about hosting, and get a little more involved.
 

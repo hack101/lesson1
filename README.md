@@ -56,7 +56,7 @@ Inside `index.html`, we will write the following:
 
 Save the file, and then open it in a browser. There are a few ways of doing this - the easiest if you are using Sublime Text is to right click and select "Open in Browser". You can also find the file in your filesystem (using Finder on a mac, or whatever) and choose to open it with a browser. Or, you can find the path to the file, and type that in the address bar of your browser, like a URL. When you open the file, you should see a page, empty but for the existential question "I am a website?" If you named the folder that contains our `index.html` something like `website`, then the filepath will look like `.../website/index.html` in your address bar.
 
-![You tell me](http://i.imgur.com/P3PxgyS.png)
+![You tell me](./img/1)
 
 An HTML file like our `index.html` is made up of what we call "tags". That's the stuff wrapped in `< >`. Tags have specific meanings that your browser understands. Importantly, tags should come in pairs: opening tags, which are just a word inside the `< >`s, and closing tags, which are the same word, but with a / in front. Some particular tags do not come in pairs, and we will see those later, but for the moment, please keep in mind that when you write an opening tag, _you must add a closing tag_. The reason I am being so emphatic about this is because if you do not close a tag, your browser will still give you a webpage back _without telling you it may be wrong_. If you don't close a tag, the browser will still try to render a webpage, but the result might not be what you wanted. When things fail on the web, they do so silently.
 
@@ -88,7 +88,7 @@ Once you've pushed, you should be able to see your files on the github website!
 
 Now we can also use Github to host the website. You can find instructions [here](https://pages.github.com/) - select "Project site" and then "Start from scratch" to see the relevant instructions. It's not too hard: go to your repository, select the "branches" dropdown (as seen in the picture below) and type in "gh-pages", and create a branch with that name.
 
-![Creating a new branch](http://i.imgur.com/QrjWxZg.png)
+![Creating a new branch](http://i.imgur.com/QrjWxZg.png =100x)
 
 Since we've already added `index.html` to our repo, all we need to do is wait! After about 10 minutes, you should be able to see your website live by going to *http://_username_.github.io/_repository_*. Unlike when we hosted the website on our own computer, now anyone can see it by going to the URL!
 
@@ -103,7 +103,7 @@ Finally, let's spruce up our page a little bit. Edit `index.html` and add whatev
   <h2> Matt Wetmore's Webpage </h2>
 
   <p>
-    Hello, my name is MAtt. I study math and computer science at McGill university and I am going to make my own website!
+    Hello, my name is Matt. I study math and computer science at McGill university and I am going to make my own website!
   </p>
   
   <h4> My Interests </h4>

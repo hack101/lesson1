@@ -18,7 +18,7 @@ There are two important parts of the equation: the client, and the server. You a
 
 This is where the server comes in. The infrastructure of the internet matches the address you typed in to a server somewhere. That server is a computer which holds the content of the website, represented in different types of files. So when you type in a URL, your browser asks the server for the files that make up that website. And if the server is available, it sends those files back to you, the client. These files are just a bunch of text, right? Some of them might look like this:
 
-````
+````html
 <html>
   <head>
     <title>My first website</title>
@@ -41,11 +41,11 @@ We will be using Sublime Text as our text editor for these tutorials. Sublime Te
 
 ### Hello web
 
-Let's make the first file of our website. Start off by creating a new folder somewhere on your computer that will hold our website. Name it whatever you'd like. Inside this folder, create a file called `index.html`. When you type in a URL that doesn't end with a filename - for example, `www.google.com/`, you are essentially asking the server for a folder, not a particular file. But a web page is represented by a file, so the server assumes you are asking for some `index.html` - a file that holds an index (list) of all the files in that folder. If you make your own `index.html`, the server will send that back.
+Let's make the first file of our website. Start off by creating a new folder somewhere on your computer that will hold our website. Name it whatever you'd like. Inside this folder, create a file called `index.html`. When you type in a URL that doesn't end with a filename - for example, `www.google.com/`, you are essentially asking the server for a folder, not a particular file. But a web page is represented by a file, so the server assumes you are asking for some `index.html` - a file that holds an index (list) of all the files in that folder. If you make your own `index.html`, the server will send that back. This is true for most servers.
 
 Inside `index.html`, we will write the following:
 
-````
+````html
 <html>
   <head>
     <title>Hello world</title>
@@ -56,9 +56,9 @@ Inside `index.html`, we will write the following:
 </html>
 ````
 
-Save the file, and then open it in a browser. There are a few ways of doing this - you can find the file in your filesystem (using Finder on a mac, or whatever) and choose to open it with a browser. Or, you can find the path to the file, and type that in the address bar of your browser, like a URL. When you open the file, you should see a page, empty but for the existential question "I am a website?" If you named the folder that contains our `index.html` something like `website`, then the filepath will look like `.../website/index.html` in your address bar. If you remove the filename, leaving `.../website/`, then you should still see the same page, because we called it `index.html`.
+Save the file, and then open it in a browser. There are a few ways of doing this - the easiest if you are using Sublime Text is to right click and select "Open in Browser". You can also find the file in your filesystem (using Finder on a mac, or whatever) and choose to open it with a browser. Or, you can find the path to the file, and type that in the address bar of your browser, like a URL. When you open the file, you should see a page, empty but for the existential question "I am a website?" If you named the folder that contains our `index.html` something like `website`, then the filepath will look like `.../website/index.html` in your address bar.
 
-[ Picture of the result ]
+![You tell me](http://i.imgur.com/P3PxgyS.png)
 
 An HTML file like our `index.html` is made up of what we call "tags". That's the stuff wrapped in `< >`. Tags have specific meanings that your browser understands. Importantly, tags should come in pairs: opening tags, which are just a word inside the `< >`s, and closing tags, which are the same word, but with a / in front. Some particular tags do not come in pairs, and we will see those later, but for the moment, please keep in mind that when you write an opening tag, _you must add a closing tag_. The reason I am being so emphatic about this is because if you do not close a tag, your browser will still give you a webpage back _without telling you it may be wrong_. If you don't close a tag, the browser will still try to render a webpage, but the result might not be what you wanted. When things fail on the web, they do so silently.
 
@@ -80,14 +80,13 @@ So git keeps track of changes to files since you last committed them, and you te
 
 Type in `git commit -m "Create index.html"` and press enter. Git will create a commit containing your file, along with a "commit message" describing what the commit does. The `-m` lets us add that message in this command, but if you want to type something longer you can just type `git commit` and git will open up your default text editor (probably vim) and let you enter your commit message there. Now that we've made a commit, when you look at the status again, it will say "Working directory clean" - there are no new changes. If you edit `index.html`, you can look at the status again and see that git noticed you made some changes. You can add these to a commit by doing `git add index.html` again, but it's easier to type `git add -u`, which means "add all changes from files I'm tracking to be committed". The `-u` is for "update".
 
-[ Gif of init'ing git and making first commit ]
-
 ### Github and hosting
 
 So now we have a (very rudimentary) website, and we've saved our progress on it with git. The final thing we will do today is push our saved history to another source, so other people can view our progress, and also so we can host it somewhere on the internet. At the moment, only you can see your website, because it is hosted on your computer. If your friend wants to see it they will need to be content with seeing it on your screen. For this, we will use Github. Github will store your project history for you, and also host very basic websites as well.
 
 First, let's push to Github. Log in to www.github.com, and create a new repository. It will give you instructions for pushing to the new repository it creates - follow those.
 
-[ Pictures of the process ]
-
 Once you've pushed, you should be able to see your files on the github website!
+
+Now we can also use Github to host the website.
+
